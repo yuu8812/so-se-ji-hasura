@@ -1,0 +1,62 @@
+table:
+  name: law_revisions
+  schema: public
+object_relationships:
+  - name: law
+    using:
+      foreign_key_constraint_on: laws
+  - name: law_category
+    using:
+      foreign_key_constraint_on: category
+  - name: law_status
+    using:
+      foreign_key_constraint_on: status
+  - name: law_type
+    using:
+      foreign_key_constraint_on: type
+array_relationships:
+  - name: law_revision_columns
+    using:
+      foreign_key_constraint_on:
+        column: law_revision
+        table:
+          name: law_revision_columns
+          schema: public
+select_permissions:
+  - role: anonymous
+    permission:
+      columns:
+        - enforcement_date
+        - law_full_text
+        - abbrev
+        - abbrev_kana
+        - abbrev_kana_seion
+        - ad_year
+        - api_law_data_info
+        - api_law_revision_id
+        - api_law_type_num
+        - category
+        - enforcement_comment
+        - era
+        - lang
+        - mission
+        - num
+        - num_kanji
+        - old_law_title
+        - old_law_title_kana
+        - old_law_title_kana_seion
+        - promulgate_day
+        - promulgate_month
+        - remain_in_force
+        - repeal_type
+        - status
+        - title
+        - title_kana
+        - title_kana_seion
+        - type
+        - year
+        - id
+        - laws
+      filter: {}
+      allow_aggregations: true
+    comment: ""

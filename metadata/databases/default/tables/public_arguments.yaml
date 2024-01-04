@@ -1,0 +1,54 @@
+table:
+  name: arguments
+  schema: public
+object_relationships:
+  - name: law
+    using:
+      foreign_key_constraint_on: law_id
+  - name: user
+    using:
+      foreign_key_constraint_on: author_id
+array_relationships:
+  - name: argument_chats
+    using:
+      foreign_key_constraint_on:
+        column: argument_id
+        table:
+          name: argument_chats
+          schema: public
+  - name: argument_resources
+    using:
+      foreign_key_constraint_on:
+        column: argument_id
+        table:
+          name: argument_resources
+          schema: public
+  - name: comments
+    using:
+      foreign_key_constraint_on:
+        column: argument_id
+        table:
+          name: comments
+          schema: public
+  - name: reactions
+    using:
+      foreign_key_constraint_on:
+        column: argument_id
+        table:
+          name: reactions
+          schema: public
+select_permissions:
+  - role: anonymous
+    permission:
+      columns:
+        - description
+        - status
+        - title
+        - created_at
+        - updated_at
+        - author_id
+        - id
+        - law_id
+      filter: {}
+      allow_aggregations: true
+    comment: ""

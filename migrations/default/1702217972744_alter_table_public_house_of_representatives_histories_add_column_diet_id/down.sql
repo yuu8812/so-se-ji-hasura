@@ -1,0 +1,4 @@
+-- Could not auto-generate a down migration.
+-- Please write an appropriate down migration for the SQL below:
+-- alter table "public"."house_of_representatives_histories" add column "diet_id" uuid
+--  not null;

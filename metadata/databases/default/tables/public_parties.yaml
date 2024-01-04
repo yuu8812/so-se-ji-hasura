@@ -1,0 +1,22 @@
+table:
+  name: parties
+  schema: public
+object_relationships:
+  - name: dietMemberByDietMember
+    using:
+      foreign_key_constraint_on: diet_member
+array_relationships:
+  - name: comments
+    using:
+      foreign_key_constraint_on:
+        column: party_id
+        table:
+          name: comments
+          schema: public
+  - name: reactions
+    using:
+      foreign_key_constraint_on:
+        column: party_id
+        table:
+          name: reactions
+          schema: public

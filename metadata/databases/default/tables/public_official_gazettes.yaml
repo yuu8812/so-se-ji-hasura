@@ -1,0 +1,25 @@
+table:
+  name: official_gazettes
+  schema: public
+array_relationships:
+  - name: comments
+    using:
+      foreign_key_constraint_on:
+        column: official_gazette_id
+        table:
+          name: comments
+          schema: public
+  - name: official_gazette_columns
+    using:
+      foreign_key_constraint_on:
+        column: official_gazette_id
+        table:
+          name: official_gazette_columns
+          schema: public
+  - name: reactions
+    using:
+      foreign_key_constraint_on:
+        column: official_gazetta_id
+        table:
+          name: reactions
+          schema: public

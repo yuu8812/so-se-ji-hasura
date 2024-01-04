@@ -1,0 +1,3 @@
+table:
+  name: diet_member
+  schema: public

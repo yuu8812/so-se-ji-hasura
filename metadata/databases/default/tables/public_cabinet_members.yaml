@@ -1,0 +1,7 @@
+table:
+  name: cabinet_members
+  schema: public
+object_relationships:
+  - name: cabinet_history
+    using:
+      foreign_key_constraint_on: cabinet_history_id

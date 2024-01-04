@@ -1,0 +1,20 @@
+table:
+  name: law_types
+  schema: public
+array_relationships:
+  - name: law_revisions
+    using:
+      foreign_key_constraint_on:
+        column: type
+        table:
+          name: law_revisions
+          schema: public
+select_permissions:
+  - role: anonymous
+    permission:
+      columns:
+        - type
+        - type_name
+        - id
+      filter: {}
+    comment: ""

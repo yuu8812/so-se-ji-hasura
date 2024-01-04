@@ -1,0 +1,15 @@
+table:
+  name: cabinet_histories
+  schema: public
+object_relationships:
+  - name: prime_minister_history
+    using:
+      foreign_key_constraint_on: prime_minister_id
+array_relationships:
+  - name: cabinet_members
+    using:
+      foreign_key_constraint_on:
+        column: cabinet_history_id
+        table:
+          name: cabinet_members
+          schema: public

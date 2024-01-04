@@ -1,0 +1,83 @@
+table:
+  name: users
+  schema: public
+array_relationships:
+  - name: argument_chats
+    using:
+      foreign_key_constraint_on:
+        column: author_id
+        table:
+          name: argument_chats
+          schema: public
+  - name: argument_resource_managers
+    using:
+      foreign_key_constraint_on:
+        column: user_id
+        table:
+          name: argument_resource_managers
+          schema: public
+  - name: arguments
+    using:
+      foreign_key_constraint_on:
+        column: author_id
+        table:
+          name: arguments
+          schema: public
+  - name: comment_reactions
+    using:
+      foreign_key_constraint_on:
+        column: user_id
+        table:
+          name: comment_reactions
+          schema: public
+  - name: comments
+    using:
+      foreign_key_constraint_on:
+        column: user_id
+        table:
+          name: comments
+          schema: public
+  - name: law_summaries
+    using:
+      foreign_key_constraint_on:
+        column: author_id
+        table:
+          name: law_summaries
+          schema: public
+  - name: reactions
+    using:
+      foreign_key_constraint_on:
+        column: user_id
+        table:
+          name: reactions
+          schema: public
+  - name: views
+    using:
+      foreign_key_constraint_on:
+        column: user_id
+        table:
+          name: views
+          schema: public
+insert_permissions:
+  - role: anonymous
+    permission:
+      check: {}
+      columns:
+        - authentication_id
+        - name
+        - created_at
+        - updated_at
+        - id
+    comment: ""
+select_permissions:
+  - role: anonymous
+    permission:
+      columns:
+        - authentication_id
+        - name
+        - created_at
+        - updated_at
+        - id
+      filter: {}
+      allow_aggregations: true
+    comment: ""

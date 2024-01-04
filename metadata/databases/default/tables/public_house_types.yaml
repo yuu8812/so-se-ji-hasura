@@ -1,0 +1,3 @@
+table:
+  name: house_types
+  schema: public

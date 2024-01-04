@@ -1,0 +1,5 @@
+tls_allowlist:
+  - host: localhost
+    permissions:
+      - self-signed
+    suffix: "3000"

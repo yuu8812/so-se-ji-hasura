@@ -1,0 +1,34 @@
+table:
+  name: views
+  schema: public
+object_relationships:
+  - name: law
+    using:
+      foreign_key_constraint_on: law_id
+  - name: user
+    using:
+      foreign_key_constraint_on: user_id
+insert_permissions:
+  - role: authenticated
+    permission:
+      check:
+        user:
+          authentication_id:
+            _eq: X-Hasura-User-Id
+      columns:
+        - created_at
+        - id
+        - law_id
+        - user_id
+    comment: ""
+select_permissions:
+  - role: anonymous
+    permission:
+      columns:
+        - created_at
+        - id
+        - law_id
+        - user_id
+      filter: {}
+      allow_aggregations: true
+    comment: ""

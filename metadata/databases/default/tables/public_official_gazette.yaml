@@ -1,0 +1,3 @@
+table:
+  name: official_gazette
+  schema: public
