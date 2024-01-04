@@ -1,7 +1,0 @@
-table:
-  name: house_of_representatives_histories
-  schema: public
-object_relationships:
-  - name: diet
-    using:
-      foreign_key_constraint_on: diet_id

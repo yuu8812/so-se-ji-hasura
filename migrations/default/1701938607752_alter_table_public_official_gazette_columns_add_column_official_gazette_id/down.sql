@@ -1,4 +1,0 @@
--- Could not auto-generate a down migration.
--- Please write an appropriate down migration for the SQL below:
--- alter table "public"."official_gazette_columns" add column "official_gazette_id" UUID
---  not null;

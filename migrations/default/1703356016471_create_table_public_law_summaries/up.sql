@@ -1,2 +1,0 @@
-CREATE TABLE "public"."law_summaries" ("id" uuid NOT NULL DEFAULT gen_random_uuid(), "summary_text" text NOT NULL, "law_id" uuid NOT NULL, "author_id" uuid NOT NULL, PRIMARY KEY ("id") , FOREIGN KEY ("law_id") REFERENCES "public"."laws"("id") ON UPDATE no action ON DELETE no action, FOREIGN KEY ("author_id") REFERENCES "public"."users"("id") ON UPDATE no action ON DELETE no action);
-CREATE EXTENSION IF NOT EXISTS pgcrypto;
