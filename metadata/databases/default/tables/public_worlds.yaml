@@ -1,0 +1,78 @@
+table:
+  name: worlds
+  schema: public
+object_relationships:
+  - name: user
+    using:
+      foreign_key_constraint_on: author_id
+array_relationships:
+  - name: citizen_histories
+    using:
+      foreign_key_constraint_on:
+        column: world_id
+        table:
+          name: citizen_histories
+          schema: public
+  - name: world_arguments
+    using:
+      foreign_key_constraint_on:
+        column: world_id
+        table:
+          name: world_arguments
+          schema: public
+  - name: world_categories
+    using:
+      foreign_key_constraint_on:
+        column: world_id
+        table:
+          name: world_categories
+          schema: public
+  - name: world_chat_boxes
+    using:
+      foreign_key_constraint_on:
+        column: world_id
+        table:
+          name: world_chat_boxes
+          schema: public
+  - name: world_citizens
+    using:
+      foreign_key_constraint_on:
+        column: world_id
+        table:
+          name: world_citizens
+          schema: public
+  - name: world_comments
+    using:
+      foreign_key_constraint_on:
+        column: world_id
+        table:
+          name: world_comments
+          schema: public
+  - name: world_editable_users
+    using:
+      foreign_key_constraint_on:
+        column: world_id
+        table:
+          name: world_editable_users
+          schema: public
+  - name: world_histories
+    using:
+      foreign_key_constraint_on:
+        column: world_id
+        table:
+          name: world_histories
+          schema: public
+  - name: world_laws
+    using:
+      foreign_key_constraint_on:
+        column: world_id
+        table:
+          name: world_laws
+          schema: public
+  - name: world_reactions
+    using:
+      foreign_key_constraint_on:
+        column: world_id
+        table:
+          name: world_reactions
+          schema: public

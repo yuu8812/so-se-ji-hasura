@@ -1,0 +1,13 @@
+input SampleInput {
+  username: String!
+  password: String!
+}
+
+type SampleOutput {
+  accessToken: String!
+}
+
+type MyMutationOutput {
+  id: uuid!
+}
+

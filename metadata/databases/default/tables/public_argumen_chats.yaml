@@ -1,0 +1,7 @@
+table:
+  name: argumen_chats
+  schema: public
+object_relationships:
+  - name: argument_chat_box
+    using:
+      foreign_key_constraint_on: chat_box_id

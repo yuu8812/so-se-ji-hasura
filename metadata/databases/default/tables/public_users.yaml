@@ -1,0 +1,116 @@
+table:
+  name: users
+  schema: public
+array_relationships:
+  - name: argument_views
+    using:
+      foreign_key_constraint_on:
+        column: user_id
+        table:
+          name: argument_views
+          schema: public
+  - name: arguments
+    using:
+      foreign_key_constraint_on:
+        column: author_id
+        table:
+          name: arguments
+          schema: public
+  - name: citizens
+    using:
+      foreign_key_constraint_on:
+        column: user_id
+        table:
+          name: citizens
+          schema: public
+  - name: law_summaries
+    using:
+      foreign_key_constraint_on:
+        column: user_id
+        table:
+          name: law_summaries
+          schema: public
+  - name: law_views
+    using:
+      foreign_key_constraint_on:
+        column: user_id
+        table:
+          name: law_views
+          schema: public
+  - name: laws
+    using:
+      foreign_key_constraint_on:
+        column: author_id
+        table:
+          name: laws
+          schema: public
+  - name: resource_editable_users
+    using:
+      foreign_key_constraint_on:
+        column: user_id
+        table:
+          name: resource_editable_users
+          schema: public
+  - name: resource_histories
+    using:
+      foreign_key_constraint_on:
+        column: edited_user_id
+        table:
+          name: resource_histories
+          schema: public
+  - name: species
+    using:
+      foreign_key_constraint_on:
+        column: author_id
+        table:
+          name: species
+          schema: public
+  - name: world_chat_boxes
+    using:
+      foreign_key_constraint_on:
+        column: author_id
+        table:
+          name: world_chat_boxes
+          schema: public
+  - name: world_chats
+    using:
+      foreign_key_constraint_on:
+        column: author_id
+        table:
+          name: world_chats
+          schema: public
+  - name: world_comments
+    using:
+      foreign_key_constraint_on:
+        column: user_id
+        table:
+          name: world_comments
+          schema: public
+  - name: world_editable_users
+    using:
+      foreign_key_constraint_on:
+        column: user_id
+        table:
+          name: world_editable_users
+          schema: public
+  - name: world_histories
+    using:
+      foreign_key_constraint_on:
+        column: editor_id
+        table:
+          name: world_histories
+          schema: public
+  - name: world_reactions
+    using:
+      foreign_key_constraint_on:
+        column: user_id
+        table:
+          name: world_reactions
+          schema: public
+  - name: worlds
+    using:
+      foreign_key_constraint_on:
+        column: author_id
+        table:
+          name: worlds
+          schema: public

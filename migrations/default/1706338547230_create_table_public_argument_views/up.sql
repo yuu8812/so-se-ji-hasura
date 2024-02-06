@@ -1,0 +1,2 @@
+CREATE TABLE "public"."argument_views" ("id" uuid NOT NULL DEFAULT gen_random_uuid(), "user_id" uuid NOT NULL, "argument_id" uuid NOT NULL, PRIMARY KEY ("id") , FOREIGN KEY ("argument_id") REFERENCES "public"."arguments"("id") ON UPDATE restrict ON DELETE restrict, FOREIGN KEY ("user_id") REFERENCES "public"."users"("id") ON UPDATE restrict ON DELETE restrict);
+CREATE EXTENSION IF NOT EXISTS pgcrypto;

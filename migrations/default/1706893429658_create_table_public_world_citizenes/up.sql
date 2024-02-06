@@ -1,0 +1,2 @@
+CREATE TABLE "public"."world_citizenes" ("id" uuid NOT NULL DEFAULT gen_random_uuid(), "world_id" uuid NOT NULL, "citizen_id" uuid NOT NULL, PRIMARY KEY ("id") , FOREIGN KEY ("citizen_id") REFERENCES "public"."citizenes"("id") ON UPDATE restrict ON DELETE restrict, FOREIGN KEY ("world_id") REFERENCES "public"."worlds"("id") ON UPDATE restrict ON DELETE restrict);
+CREATE EXTENSION IF NOT EXISTS pgcrypto;

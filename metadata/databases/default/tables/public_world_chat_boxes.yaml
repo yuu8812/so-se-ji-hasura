@@ -1,0 +1,18 @@
+table:
+  name: world_chat_boxes
+  schema: public
+object_relationships:
+  - name: user
+    using:
+      foreign_key_constraint_on: author_id
+  - name: world
+    using:
+      foreign_key_constraint_on: world_id
+array_relationships:
+  - name: world_chats
+    using:
+      foreign_key_constraint_on:
+        column: chat_box_id
+        table:
+          name: world_chats
+          schema: public

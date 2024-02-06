@@ -1,0 +1,22 @@
+table:
+  name: world_citizenes
+  schema: public
+object_relationships:
+  - name: citizene
+    using:
+      foreign_key_constraint_on: citizen_id
+  - name: world
+    using:
+      foreign_key_constraint_on: world_id
+select_permissions:
+  - role: anonymous
+    permission:
+      columns:
+        - created_at
+        - updated_at
+        - citizen_id
+        - id
+        - world_id
+      filter: {}
+      allow_aggregations: true
+    comment: ""

@@ -1,0 +1,3 @@
+table:
+  name: world_chat_comments
+  schema: public

@@ -1,0 +1,24 @@
+table:
+  name: law_revisions
+  schema: public
+object_relationships:
+  - name: law
+    using:
+      foreign_key_constraint_on: law_id
+  - name: law_category
+    using:
+      foreign_key_constraint_on: category
+  - name: law_status
+    using:
+      foreign_key_constraint_on: status
+  - name: law_type
+    using:
+      foreign_key_constraint_on: type
+array_relationships:
+  - name: law_revision_columns
+    using:
+      foreign_key_constraint_on:
+        column: law_revision_id
+        table:
+          name: law_revision_columns
+          schema: public

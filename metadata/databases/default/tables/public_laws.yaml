@@ -1,0 +1,43 @@
+table:
+  name: laws
+  schema: public
+object_relationships:
+  - name: user
+    using:
+      foreign_key_constraint_on: author_id
+array_relationships:
+  - name: arguments
+    using:
+      foreign_key_constraint_on:
+        column: law_id
+        table:
+          name: arguments
+          schema: public
+  - name: law_revisions
+    using:
+      foreign_key_constraint_on:
+        column: law_id
+        table:
+          name: law_revisions
+          schema: public
+  - name: law_summaries
+    using:
+      foreign_key_constraint_on:
+        column: law_id
+        table:
+          name: law_summaries
+          schema: public
+  - name: law_views
+    using:
+      foreign_key_constraint_on:
+        column: law_id
+        table:
+          name: law_views
+          schema: public
+  - name: world_laws
+    using:
+      foreign_key_constraint_on:
+        column: law_id
+        table:
+          name: world_laws
+          schema: public

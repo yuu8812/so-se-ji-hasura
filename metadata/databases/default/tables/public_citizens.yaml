@@ -1,0 +1,25 @@
+table:
+  name: citizens
+  schema: public
+object_relationships:
+  - name: species_asset
+    using:
+      foreign_key_constraint_on: species_asset_id
+  - name: user
+    using:
+      foreign_key_constraint_on: user_id
+array_relationships:
+  - name: citizen_histories
+    using:
+      foreign_key_constraint_on:
+        column: citizen_id
+        table:
+          name: citizen_histories
+          schema: public
+  - name: world_citizens
+    using:
+      foreign_key_constraint_on:
+        column: citizen_id
+        table:
+          name: world_citizens
+          schema: public

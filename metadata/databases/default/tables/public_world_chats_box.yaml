@@ -1,0 +1,32 @@
+table:
+  name: world_chats_box
+  schema: public
+object_relationships:
+  - name: user
+    using:
+      foreign_key_constraint_on: author_id
+  - name: world
+    using:
+      foreign_key_constraint_on: world_id
+array_relationships:
+  - name: world_chats
+    using:
+      foreign_key_constraint_on:
+        column: chat_box_id
+        table:
+          name: world_chats
+          schema: public
+select_permissions:
+  - role: anonymous
+    permission:
+      columns:
+        - status
+        - description
+        - title
+        - created_at
+        - updated_at
+        - author_id
+        - id
+        - world_id
+      filter: {}
+    comment: ""

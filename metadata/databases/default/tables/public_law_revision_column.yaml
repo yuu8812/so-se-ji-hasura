@@ -1,0 +1,27 @@
+table:
+  name: law_revision_column
+  schema: public
+array_relationships:
+  - name: comments
+    using:
+      foreign_key_constraint_on:
+        column: law_revision_column_id
+        table:
+          name: comments
+          schema: public
+  - name: reactions
+    using:
+      foreign_key_constraint_on:
+        column: law_revision_column_id
+        table:
+          name: reactions
+          schema: public
+select_permissions:
+  - role: anonymous
+    permission:
+      columns:
+        - column_id
+        - id
+      filter: {}
+      allow_aggregations: true
+    comment: ""
