@@ -6,12 +6,19 @@ object_relationships:
     using:
       foreign_key_constraint_on: author_id
 array_relationships:
-  - name: arguments
+  - name: law_comments
     using:
       foreign_key_constraint_on:
         column: law_id
         table:
-          name: arguments
+          name: law_comments
+          schema: public
+  - name: law_reactions
+    using:
+      foreign_key_constraint_on:
+        column: law_id
+        table:
+          name: law_reactions
           schema: public
   - name: law_revisions
     using:
@@ -20,19 +27,12 @@ array_relationships:
         table:
           name: law_revisions
           schema: public
-  - name: law_summaries
+  - name: law_star_rates
     using:
       foreign_key_constraint_on:
         column: law_id
         table:
-          name: law_summaries
-          schema: public
-  - name: law_views
-    using:
-      foreign_key_constraint_on:
-        column: law_id
-        table:
-          name: law_views
+          name: law_star_rates
           schema: public
   - name: world_laws
     using:

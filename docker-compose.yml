@@ -3,7 +3,7 @@ services:
   postgres:
     image: docker.io/postgres:13.5-alpine3.15
     command: postgres -c jit=off
-    container_name: so-se-ji_db
+    container_name: so-se-ji_db_2
     environment:
       - TZ=Asia/Tokyo
       - POSTGRES_USER=${POSTGRES_USER}
@@ -13,7 +13,7 @@ services:
     volumes:
       - db_data:/var/lib/postgresql/data
   graphql-engine:
-    container_name: so-se-ji_hasura
+    container_name: so-se-ji_hasura_2
     build:
       context: .
       dockerfile: ./Dockerfile

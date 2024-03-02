@@ -1,0 +1,10 @@
+table:
+  name: law_star_rates
+  schema: public
+object_relationships:
+  - name: law
+    using:
+      foreign_key_constraint_on: law_id
+  - name: user
+    using:
+      foreign_key_constraint_on: user_id

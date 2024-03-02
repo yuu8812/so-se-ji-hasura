@@ -6,33 +6,14 @@ object_relationships:
     using:
       foreign_key_constraint_on: author_id
 array_relationships:
-  - name: citizen_histories
+  - name: species_percentage
     using:
-      foreign_key_constraint_on:
-        column: world_id
-        table:
-          name: citizen_histories
-          schema: public
-  - name: world_arguments
-    using:
-      foreign_key_constraint_on:
-        column: world_id
-        table:
-          name: world_arguments
-          schema: public
-  - name: world_categories
-    using:
-      foreign_key_constraint_on:
-        column: world_id
-        table:
-          name: world_categories
-          schema: public
-  - name: world_chat_boxes
-    using:
-      foreign_key_constraint_on:
-        column: world_id
-        table:
-          name: world_chat_boxes
+      manual_configuration:
+        column_mapping:
+          id: world_id
+        insertion_order: null
+        remote_table:
+          name: species_percentage_view_with_world_id
           schema: public
   - name: world_citizens
     using:
@@ -47,13 +28,6 @@ array_relationships:
         column: world_id
         table:
           name: world_comments
-          schema: public
-  - name: world_editable_users
-    using:
-      foreign_key_constraint_on:
-        column: world_id
-        table:
-          name: world_editable_users
           schema: public
   - name: world_histories
     using:

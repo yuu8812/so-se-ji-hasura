@@ -1,1 +1,0 @@
-CREATE TABLE "public"."species" ("id" uuid NOT NULL, "name" text NOT NULL, "author_id" uuid, "description" text NOT NULL, PRIMARY KEY ("id") , FOREIGN KEY ("author_id") REFERENCES "public"."users"("id") ON UPDATE restrict ON DELETE restrict, UNIQUE ("name"));

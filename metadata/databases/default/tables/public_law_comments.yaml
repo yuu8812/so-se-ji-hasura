@@ -1,0 +1,18 @@
+table:
+  name: law_comments
+  schema: public
+object_relationships:
+  - name: law
+    using:
+      foreign_key_constraint_on: law_id
+  - name: user
+    using:
+      foreign_key_constraint_on: author_id
+array_relationships:
+  - name: law_comment_reactions
+    using:
+      foreign_key_constraint_on:
+        column: comment_id
+        table:
+          name: law_comment_reactions
+          schema: public

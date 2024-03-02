@@ -2,9 +2,6 @@ table:
   name: world_histories
   schema: public
 object_relationships:
-  - name: user
-    using:
-      foreign_key_constraint_on: editor_id
   - name: world
     using:
       foreign_key_constraint_on: world_id

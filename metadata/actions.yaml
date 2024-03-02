@@ -1,9 +1,6 @@
 actions: []
 custom_types:
   enums: []
-  input_objects:
-    - name: SampleInput
-  objects:
-    - name: SampleOutput
-    - name: MyMutationOutput
+  input_objects: []
+  objects: []
   scalars: []
