@@ -16,3 +16,26 @@ array_relationships:
         table:
           name: law_comment_reactions
           schema: public
+insert_permissions:
+  - role: authenticated
+    permission:
+      check: {}
+      columns:
+        - author_id
+        - law_id
+        - text
+    comment: ""
+select_permissions:
+  - role: anonymous
+    permission:
+      columns:
+        - text
+        - created_at
+        - updated_at
+        - author_id
+        - id
+        - law_id
+      filter: {}
+      limit: 50
+      allow_aggregations: true
+    comment: ""

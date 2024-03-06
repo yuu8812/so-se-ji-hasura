@@ -72,3 +72,35 @@ array_relationships:
         table:
           name: worlds
           schema: public
+select_permissions:
+  - role: anonymous
+    permission:
+      columns:
+        - is_first_time
+        - age
+        - gender
+        - status
+        - authentication_id
+        - icon_url
+        - name
+        - created_at
+        - login_bonus_timestamp
+        - updated_at
+        - id
+      filter: {}
+      limit: 50
+    comment: ""
+update_permissions:
+  - role: authenticated
+    permission:
+      columns:
+        - age
+        - gender
+        - icon_url
+        - is_first_time
+        - name
+      filter:
+        authentication_id:
+          _eq: X-Hasura-User-Id
+      check: null
+    comment: ""

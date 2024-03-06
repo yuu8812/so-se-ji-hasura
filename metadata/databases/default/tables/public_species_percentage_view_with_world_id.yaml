@@ -1,3 +1,14 @@
 table:
   name: species_percentage_view_with_world_id
   schema: public
+select_permissions:
+  - role: anonymous
+    permission:
+      columns:
+        - species_auto_incremental_id
+        - percentage
+        - species_name
+        - world_id
+      filter: {}
+      limit: 100
+    comment: ""

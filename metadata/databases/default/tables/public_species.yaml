@@ -9,3 +9,16 @@ array_relationships:
         table:
           name: species_assets
           schema: public
+select_permissions:
+  - role: anonymous
+    permission:
+      columns:
+        - auto_incremental_id
+        - description
+        - name
+        - created_at
+        - updated_at
+        - id
+      filter: {}
+      limit: 50
+    comment: ""

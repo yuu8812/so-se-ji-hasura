@@ -16,3 +16,26 @@ array_relationships:
         table:
           name: world_comment_reactions
           schema: public
+insert_permissions:
+  - role: authenticated
+    permission:
+      check: {}
+      columns:
+        - author_id
+        - text
+        - world_id
+    comment: ""
+select_permissions:
+  - role: anonymous
+    permission:
+      columns:
+        - text
+        - created_at
+        - updated_at
+        - author_id
+        - id
+        - world_id
+      filter: {}
+      limit: 100
+      allow_aggregations: true
+    comment: ""

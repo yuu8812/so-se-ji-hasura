@@ -13,3 +13,16 @@ array_relationships:
         table:
           name: citizens
           schema: public
+select_permissions:
+  - role: anonymous
+    permission:
+      columns:
+        - image_url
+        - personality
+        - created_at
+        - updated_at
+        - id
+        - species_id
+      filter: {}
+      limit: 50
+    comment: ""

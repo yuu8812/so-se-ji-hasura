@@ -1,3 +1,12 @@
 table:
   name: random_species_assets_view
   schema: public
+select_permissions:
+  - role: anonymous
+    permission:
+      columns:
+        - species_asset_id
+        - species_id
+      filter: {}
+      limit: 50
+    comment: ""

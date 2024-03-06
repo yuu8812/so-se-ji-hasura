@@ -8,3 +8,23 @@ object_relationships:
   - name: world
     using:
       foreign_key_constraint_on: world_id
+insert_permissions:
+  - role: authenticated
+    permission:
+      check: {}
+      columns:
+        - law_id
+        - world_id
+    comment: ""
+select_permissions:
+  - role: anonymous
+    permission:
+      columns:
+        - created_at
+        - updated_at
+        - law_id
+        - world_id
+      filter: {}
+      limit: 50
+      allow_aggregations: true
+    comment: ""

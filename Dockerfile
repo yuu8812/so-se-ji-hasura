@@ -11,8 +11,8 @@ ARG HASURA_GRAPHQL_JWT_SECRET
 ARG HASURA_GRAPHQL_UNAUTHORIZED_ROLE
 
 # # migration, metadataをコピー
-# COPY ./migrations /hasura_migrations
-# COPY ./metadata /hasura_metadata
+COPY ./migrations /hasura_migrations
+COPY ./metadata /hasura_metadata
 
 
 # Hasura環境変数値設定
@@ -23,8 +23,8 @@ ENV HASURA_GRAPHQL_JWT_SECRET=${HASURA_GRAPHQL_JWT_SECRET}
 ENV HASURA_GRAPHQL_UNAUTHORIZED_ROLE="${HASURA_GRAPHQL_UNAUTHORIZED_ROLE}"
 ENV HASURA_GRAPHQL_ENABLE_APOLLO_FEDERATION="true"
 
-# ENV HASURA_GRAPHQL_MIGRATIONS_DIR=/hasura_migrations
-# ENV HASURA_GRAPHQL_METADATA_DIR=/hasura_metadata
+ENV HASURA_GRAPHQL_MIGRATIONS_DIR=/hasura_migrations
+ENV HASURA_GRAPHQL_METADATA_DIR=/hasura_metadata
 
 # 通信用ポート開放
 EXPOSE 8080

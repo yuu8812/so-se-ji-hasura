@@ -5,3 +5,38 @@ object_relationships:
   - name: law
     using:
       foreign_key_constraint_on: law_id
+insert_permissions:
+  - role: authenticated
+    permission:
+      check: {}
+      columns:
+        - block_json
+        - data_xml
+        - description
+        - law_category
+        - law_id
+        - law_image_url
+        - law_status
+        - law_type
+        - title
+    comment: ""
+select_permissions:
+  - role: anonymous
+    permission:
+      columns:
+        - law_status
+        - law_type
+        - block_json
+        - data_xml
+        - description
+        - law_category
+        - law_image_url
+        - title
+        - created_at
+        - updated_at
+        - id
+        - law_id
+      filter: {}
+      limit: 50
+      allow_aggregations: true
+    comment: ""
