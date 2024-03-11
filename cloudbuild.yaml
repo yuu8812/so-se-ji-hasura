@@ -2,7 +2,7 @@ steps:
   - name: gcr.io/cloud-builders/docker
     args:
       - build
-      - "--build-arg"
+        - "--build-arg"
       - "DB_USER=$_DB_USER"
       - "--build-arg"
       - "DB_PASSWORD=$_DB_PASSWORD"
@@ -52,12 +52,12 @@ options:
   substitutionOption: ALLOW_LOOSE
   logging: CLOUD_LOGGING_ONLY
 substitutions:
-  _SERVICE_NAME: hasura-api
-  _TRIGGER_ID: e08b64e9-96ac-46d0-883f-a9026d9bb66d
-  _DEPLOY_REGION: asia-northeast1
-  _AR_HOSTNAME: asia-northeast1-docker.pkg.dev
   _PLATFORM: managed
+  _SERVICE_NAME: so-se-ji-hasura
+  _DEPLOY_REGION: asia-northeast1
+  _TRIGGER_ID: 8bfd5ab7-c27c-4fd9-9b3b-db943b9e67b6
+  _AR_HOSTNAME: asia-northeast1-docker.pkg.dev
 tags:
   - gcp-cloud-build-deploy-cloud-run
   - gcp-cloud-build-deploy-cloud-run-managed
-  - hasura-api
+  - so-se-ji-hasura
