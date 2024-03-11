@@ -45,11 +45,12 @@ insert_permissions:
   - role: authenticated
     permission:
       check: {}
+      set:
+        type: "0"
       columns:
         - author_id
         - newness
         - place
-        - type
     comment: ""
 select_permissions:
   - role: anonymous

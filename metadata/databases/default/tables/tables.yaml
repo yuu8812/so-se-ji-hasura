@@ -5,6 +5,7 @@
 - "!include public_law_revisions.yaml"
 - "!include public_law_star_rates.yaml"
 - "!include public_laws.yaml"
+- "!include public_maintenances.yaml"
 - "!include public_random_species_assets_view.yaml"
 - "!include public_species.yaml"
 - "!include public_species_assets.yaml"

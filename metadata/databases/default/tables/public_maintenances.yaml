@@ -1,0 +1,15 @@
+table:
+  name: maintenances
+  schema: public
+select_permissions:
+  - role: anonymous
+    permission:
+      columns:
+        - created_at
+        - end_timestamp
+        - id
+        - start_timestamp
+        - updated_at
+      filter: {}
+      limit: 50
+    comment: ""

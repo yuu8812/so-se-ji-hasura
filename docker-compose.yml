@@ -12,6 +12,8 @@ services:
     restart: always
     volumes:
       - db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
   graphql-engine:
     container_name: so-se-ji_hasura_2
     build:
