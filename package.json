@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "dev": "hasura console --endpoint http://localhost:8000 --admin-secret Birthday2015"
+    "dev": "hasura console --endpoint http://localhost:8080 --admin-secret Birthday2015"
   },
   "devDependencies": {
     "hasura-cli": "^2.2.0"
