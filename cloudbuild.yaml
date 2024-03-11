@@ -2,7 +2,7 @@ steps:
   - name: gcr.io/cloud-builders/docker
     args:
       - build
-        - "--build-arg"
+      - "--build-arg"
       - "DB_USER=$_DB_USER"
       - "--build-arg"
       - "DB_PASSWORD=$_DB_PASSWORD"
