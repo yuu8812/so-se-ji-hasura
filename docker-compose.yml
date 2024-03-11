@@ -32,6 +32,6 @@ services:
     depends_on:
       - postgres
     ports:
-      - "8080:8080"
+      - "8080:8000"
 volumes:
   db_data:
