@@ -16,6 +16,8 @@ steps:
       - "HASURA_GRAPHQL_ADMIN_SECRET=$_HASURA_GRAPHQL_ADMIN_SECRET"
       - "--build-arg"
       - "HASURA_GRAPHQL_JWT_SECRET=$_HASURA_GRAPHQL_JWT_SECRET"
+      - "--build-arg"
+      - "HASURA_GRAPHQL_UNAUTHORIZED_ROLE=$_HASURA_GRAPHQL_UNAUTHORIZED_ROLE"
       - "--no-cache"
       - "-t"
       - >-
