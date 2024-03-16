@@ -1,4 +1,6 @@
 - "!include public_citizens.yaml"
+- "!include public_country_law_column.yaml"
+- "!include public_country_law_column_reactions.yaml"
 - "!include public_law_comment_reactions.yaml"
 - "!include public_law_comments.yaml"
 - "!include public_law_reactions.yaml"

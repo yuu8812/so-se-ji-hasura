@@ -1,0 +1,2 @@
+CREATE TABLE "public"."law_column" ("id" uuid NOT NULL DEFAULT gen_random_uuid(), "law_revision_id" uuid, "refer_country__law_column_id" integer, "refer_user_law_column_id" uuid NOT NULL, "text" text NOT NULL, PRIMARY KEY ("id","law_revision_id","refer_country__law_column_id","refer_user_law_column_id") , FOREIGN KEY ("law_revision_id") REFERENCES "public"."law_revisions"("id") ON UPDATE restrict ON DELETE restrict);
+CREATE EXTENSION IF NOT EXISTS pgcrypto;

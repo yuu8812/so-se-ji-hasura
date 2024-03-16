@@ -9,6 +9,13 @@ array_relationships:
         table:
           name: citizens
           schema: public
+  - name: country_law_column_reactions
+    using:
+      foreign_key_constraint_on:
+        column: user_id
+        table:
+          name: country_law_column_reactions
+          schema: public
   - name: law_comment_reactions
     using:
       foreign_key_constraint_on:

@@ -1,0 +1,53 @@
+table:
+  name: country_law_column
+  schema: public
+array_relationships:
+  - name: country_law_column_reactions
+    using:
+      manual_configuration:
+        column_mapping:
+          column_id: column_id
+          law_revision_id: law_revision_id
+        insertion_order: null
+        remote_table:
+          name: country_law_column_reactions
+          schema: public
+insert_permissions:
+  - role: authenticated
+    permission:
+      check: {}
+      columns:
+        - column_id
+        - law_revision_id
+        - text
+    comment: ""
+select_permissions:
+  - role: anonymous
+    permission:
+      columns:
+        - column_id
+        - text
+        - created_at
+        - updated_at
+        - law_revision_id
+      filter: {}
+      limit: 100
+    comment: ""
+update_permissions:
+  - role: authenticated
+    permission:
+      columns:
+        - column_id
+        - law_revision_id
+      filter: {}
+      check:
+        _exists:
+          _table:
+            name: country_law_column
+            schema: public
+          _where:
+            country_law_column_reactions:
+              user:
+                authentication_id:
+                  _eq: X-Hasura-User-Id
+    comment: ""
