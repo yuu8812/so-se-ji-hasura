@@ -40,14 +40,5 @@ update_permissions:
         - column_id
         - law_revision_id
       filter: {}
-      check:
-        _exists:
-          _table:
-            name: country_law_column
-            schema: public
-          _where:
-            country_law_column_reactions:
-              user:
-                authentication_id:
-                  _eq: X-Hasura-User-Id
+      check: {}
     comment: ""
