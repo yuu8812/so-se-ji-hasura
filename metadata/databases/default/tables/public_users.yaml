@@ -51,6 +51,13 @@ array_relationships:
         table:
           name: laws
           schema: public
+  - name: user_law_column_reactions
+    using:
+      foreign_key_constraint_on:
+        column: user_id
+        table:
+          name: user_law_column_reactions
+          schema: public
   - name: world_comment_reactions
     using:
       foreign_key_constraint_on:

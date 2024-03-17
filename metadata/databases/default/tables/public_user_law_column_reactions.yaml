@@ -1,0 +1,49 @@
+table:
+  name: user_law_column_reactions
+  schema: public
+object_relationships:
+  - name: user
+    using:
+      foreign_key_constraint_on: user_id
+  - name: user_law_column
+    using:
+      manual_configuration:
+        column_mapping:
+          column_id: column_id
+          law_revision_id: law_revision_id
+        insertion_order: null
+        remote_table:
+          name: user_law_column
+          schema: public
+insert_permissions:
+  - role: authenticated
+    permission:
+      check: {}
+      columns:
+        - column_id
+        - law_revision_id
+        - type
+        - user_id
+    comment: ""
+select_permissions:
+  - role: anonymous
+    permission:
+      columns:
+        - type
+        - created_at
+        - updated_at
+        - column_id
+        - law_revision_id
+        - user_id
+      filter: {}
+      limit: 100
+      allow_aggregations: true
+    comment: ""
+delete_permissions:
+  - role: authenticated
+    permission:
+      filter:
+        user:
+          authentication_id:
+            _eq: X-Hasura-User-Id
+    comment: ""

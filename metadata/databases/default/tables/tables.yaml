@@ -12,6 +12,8 @@
 - "!include public_species.yaml"
 - "!include public_species_assets.yaml"
 - "!include public_species_percentage_view_with_world_id.yaml"
+- "!include public_user_law_column.yaml"
+- "!include public_user_law_column_reactions.yaml"
 - "!include public_users.yaml"
 - "!include public_world_citizens.yaml"
 - "!include public_world_comment_reactions.yaml"

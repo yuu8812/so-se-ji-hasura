@@ -5,6 +5,14 @@ object_relationships:
   - name: law
     using:
       foreign_key_constraint_on: law_id
+array_relationships:
+  - name: user_law_columns
+    using:
+      foreign_key_constraint_on:
+        column: law_revision_id
+        table:
+          name: user_law_column
+          schema: public
 insert_permissions:
   - role: authenticated
     permission:
